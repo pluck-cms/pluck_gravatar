@@ -47,7 +47,7 @@ function pluck_getGravatar($email) {
     $emailhash = md5( strtolower( trim( $email ) ) );
     $url = "http://www.gravatar.com/" . $emailhash . ".php"; 
     try{
-        $str = file_get_contents($url);
+        $str = @file_get_contents($url);
         $profile = unserialize( $str );
     } catch (Exception $e) {
     
